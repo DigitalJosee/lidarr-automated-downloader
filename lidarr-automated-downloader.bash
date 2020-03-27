@@ -121,11 +121,13 @@ CleanCacheCheck () {
 FileAccessPermissions () {
 	echo "Setting file permissions (${FilePermissions})"
 	chmod ${FilePermissions} "$1"/*
+	chown josep:josep "$1"/*
 }
 
 FolderAccessPermissions () {
 	echo "Setting folder permissions (${FolderPermissions})"
 	chmod ${FolderPermissions} "$1"
+	chown -R josep:josep "$1"
 }
 
 DurationCalc () {
